@@ -7,5 +7,5 @@ private:
     vector<string> documentData;
 
 public:
-    Document() {}
+    Document();
 };

@@ -1,7 +1,7 @@
 #include "Editor.h"
-int main() {
-Editor editor;
-editor.loop();
-
-return 0;
+int main()
+{
+    Editor editor;
+    editor.loop();
+    return 0;
 }

@@ -6,7 +6,8 @@ void Editor::loop()
 {
     while (true)
     {
-        getline(cin, curentLine);
+        getline(cin, currentLine);
+        cout<<"please enter and input"<<endl;
         cout << currentLine << endl;
     }
 }
