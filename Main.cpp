@@ -1,6 +1,6 @@
-#include <iostream>
-using namespace std;
+#include "Editor.h"
 int main() {
-	cout << " hi";
-	return 0;
+Editor editor;
+editor.loop();
+return 0;
 }

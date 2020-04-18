@@ -1,6 +1,8 @@
-# include <iostream>
-# include <string>
 # include "Editor.h"
-# include "Document.h"
-using namespace std;
-void Editor::loop(){}
+void Editor::loop(){
+while(true){
+getline(cin,curentLine);
+cout<<currentLine<<endl;
+}
+
+}

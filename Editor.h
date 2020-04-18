@@ -1,9 +1,16 @@
+# include <iostream>
+# include <string>
+# include "Document.h"
+using namespace std;
 class Editor {
-private:
-Document doc;
+
+
 public:
-Editor(){}
-	void Editor::loop(){
+string currentLine = "";
+Editor(){
+
+}
+	void loop(){
 		
 	}
 	
