@@ -3,12 +3,4 @@
 # include "Editor.h"
 # include "Document.h"
 using namespace std;
-class Editor {
-	Document doc;
-	
-	
-	
-	
-
-};
-
+void Editor::loop(){}
