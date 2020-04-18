@@ -3,10 +3,12 @@
 # include "Document.h"
 using namespace std;
 class Editor {
-
+    private:
+string currentLine = "";
+Document docoment;
 
 public:
-string currentLine = "";
+
 Editor(){
 
 }
