@@ -7,6 +7,7 @@ class Document
 {
 private:
     vector<string> documentData;
+    int currentLine;
 
 public:
     Document();
@@ -19,7 +20,7 @@ public:
     void deleteLine(); //delete current line
     void searchForward(); //search the first line that contains the string "s" and print it / else go to last line of the file
     void searchBackward(); //search the first line that contains the string "s" and print it / else go to last line of the file
-    void swarpWord(); //swap the first appearens of the old string with the new string
+    void swapWord(); //swap the first appearens of the old string with the new string
     void appendLines(); //combine lines
-    void q(); //quit editor 
+    void quit(); //quit editor 
 };

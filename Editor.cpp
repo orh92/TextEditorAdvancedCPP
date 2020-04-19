@@ -7,16 +7,16 @@ void Editor::loop()
 {
     while ( getline(cin, currentLine))
     {
-        if(currentLine=="3n"){docoment.printCurrentLine();}
-        if(currentLine=="%p"){docoment.printAll();}
-        if(currentLine=="a"){docoment.addAfterTheLine();}
-        if(currentLine=="i"){docoment.addBeforTheLine();}
-        if(currentLine=="c"){docoment.overrideLine();}
-        if(currentLine=="3d"){docoment.deleteLine();}
-        if(currentLine=="/text"){docoment.searchForward();}
-        if(currentLine=="?text"){docoment.searchBackward();}
-        if(currentLine=="s/old/new/"){docoment.swarpWord();}
-        if(currentLine=="3,4j"){docoment.appendLines();}
-        if(currentLine=="Q"){docoment.q();}
+        if(currentLine=="3n"){this->docoment.printCurrentLine();}
+        if(currentLine=="%p"){this->docoment.printAll();}
+        if(currentLine=="a"){this->docoment.addAfterTheLine();}
+        if(currentLine=="i"){this->docoment.addBeforTheLine();}
+        if(currentLine=="c"){this->docoment.overrideLine();}
+        if(currentLine=="3d"){this->docoment.deleteLine();}
+        if(currentLine=="/text"){this->docoment.searchForward();}
+        if(currentLine=="?text"){this->docoment.searchBackward();}
+        if(currentLine=="s/old/new/"){this->docoment.swapWord();}
+        if(currentLine=="3,4j"){this->docoment.appendLines();}
+        if(currentLine=="Q"){this->docoment.quit();}
     }
 }
