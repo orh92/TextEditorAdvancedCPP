@@ -7,10 +7,12 @@
 class Editor
 {
 private:
-	string currentLine = "";
+	string currentLine;
+	string searchStr;
 	Document docoment;
 public:
 	Editor();
 	~Editor();
 	void loop();	
+	vector<string> splitByChar(string str, char ch);
 };

@@ -11,8 +11,10 @@
     void  Document::addBeforTheLine(){}
     void  Document::overrideLine(){}
     void  Document::deleteLine(){}
-    void Document::searchForward(){}
-    void Document::searchBackward(){}
-    void  Document::swapWord(){}
+    void Document::searchForward(string strToSearch){}
+    void Document::searchBackward(string strToSearch){}
+    void  Document::swapWord(string oldStr,string newStr){
+
+    }
     void Document::appendLines(){}
-    void  Document::quit(){}
+
