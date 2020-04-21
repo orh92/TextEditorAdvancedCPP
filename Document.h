@@ -21,5 +21,5 @@ public:
     void searchForward(string strToSearch); //search the first line that contains the string "s" and print it / else go to last line of the file
     void searchBackward(string strToSearch); //search the first line that contains the string "s" and print it / else go to last line of the file
     void swapWord(string oldStr, string newStr); //swap the first appearens of the old string with the new string
-    void appendLines(); //combine lines
+    void appendLines(int num1,int num2); //combine lines
 };

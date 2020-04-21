@@ -14,8 +14,7 @@ void Editor::loop()
 {
     while (true)
     {
-         getline(cin,currentLine);
-        cout << currentLine << endl;
+        getline(cin,currentLine);
         if (currentLine.empty())
         {
             continue;
@@ -76,8 +75,11 @@ void Editor::loop()
         }
         else if (regex_match(currentLine, regex("[0-9]+[,]+[0-9]+[j]")))
         {
-            
-            this->docoment.appendLines();
+            vector<string> vec=splitByChar(currentLine,',');
+            int num1=stoi(vec.at(0));
+            string str=vec.at(1).substr(0,(vec.at(1).length()-1));
+            int num2=stoi(str);
+            this->docoment.appendLines(num1,num2);
         }
         else if (currentLine.compare("Q")==0)
         {
