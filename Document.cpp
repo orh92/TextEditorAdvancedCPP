@@ -7,11 +7,13 @@ Document::Document()
     this->currentLineIndex = 0;
 }
 Document::~Document() {}
-void Document::printCurrentLine()
+void Document::printLineByNum(int num)
 {
     if (!documentLines.empty())
     {
-        cout << currentLineIndex << "\t" << documentLines.at(currentLineIndex) << endl;
+        cout << num << "\t" << documentLines.at(num-1) << endl;
+      this->currentLineIndex=num;
+
     }
 }
 void Document::printAll()
@@ -29,10 +31,57 @@ void Document::printAll()
         }
     }
 }
-void Document::addAfterTheLine() {}
-void Document::addBeforTheLine() {}
-void Document::overrideLine() {}
-void Document::deleteLine() {}
+void Document::addAfterTheLine() {
+    string str;
+	getline(cin, str);
+	cout << str <<endl;
+	while (!(str.compare(".") == 0))
+	{
+		auto insertPositionLine = this->documentLines.begin() + this->currentLineIndex;
+		 this->documentLines.insert(insertPositionLine, str);
+		this->currentLineIndex++;
+		getline(cin, str);
+		cout << str <<endl;
+	}
+}
+void Document::addBeforTheLine(){
+       string str;
+	getline(cin, str);
+	cout << str <<endl;
+	while (!(str.compare(".") == 0))
+	{
+		auto insertPositionLine = this->documentLines.begin() + this->currentLineIndex-1;
+		 this->documentLines.insert(insertPositionLine, str);
+		this->currentLineIndex++;
+		getline(cin, str);
+		cout << str <<endl;
+	}
+}
+void Document::overrideLine() {
+    if(currentLineIndex>0){
+    	string str;
+	getline(cin, str);
+	cout << str << endl;
+	this->documentLines.at(currentLineIndex - 1) = str;
+	this->addAfterTheLine();
+    }
+    else{
+        	string str;
+	getline(cin, str);
+	cout << str << endl;
+	this->documentLines.at(currentLineIndex) = str;
+	this->addAfterTheLine();
+    }
+
+}
+void Document::deleteLine(int num) {
+
+if (this->currentLineIndex > 0)
+	{
+		this->documentLines.erase(documentLines.begin() + this->currentLineIndex - 1);
+		this->currentLineIndex--;
+	}
+}
 void Document::searchForward(string strToSearch) {}
 void Document::searchBackward(string strToSearch) {}
 void Document::swapWord(string oldStr, string newStr)

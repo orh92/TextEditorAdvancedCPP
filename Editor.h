@@ -14,5 +14,6 @@ public:
 	Editor();
 	~Editor();
 	void loop();	
+	bool isNumber(string str);
 	vector<string> splitByChar(string str, char ch);
 };

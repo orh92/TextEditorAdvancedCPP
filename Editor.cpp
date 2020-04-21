@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <regex>
 using namespace std;
 Editor::Editor()
 {
@@ -19,9 +20,12 @@ void Editor::loop()
         {
             continue;
         }
-        else if (currentLine.compare("3n") == 0)
+      
+        else if (regex_match(currentLine, regex("[0-9]+[n]")))
         {
-            this->docoment.printCurrentLine();
+            int num=stoi(currentLine.substr(0,currentLine.length()-1));
+                this->docoment.printLineByNum(num);
+           
         }
         else if (currentLine.compare("%p") == 0)
         {
@@ -39,9 +43,10 @@ void Editor::loop()
         {
             this->docoment.overrideLine();
         }
-        else if (currentLine.compare("3d") == 0)
+        else if (regex_match(currentLine, regex("[0-9]+[d]")))
         {
-            this->docoment.deleteLine();
+            int num=stoi(currentLine.substr(0,currentLine.length()-1));
+              this->docoment.deleteLine(num); 
         }
         else if (currentLine[0] == '/')
         {
@@ -62,7 +67,6 @@ void Editor::loop()
         }
         else if (currentLine[0] == 's')
         {
-
             vector<string> oldNew = splitByChar(currentLine, '/');
             if (oldNew.size() > 2){
             string oldStr=oldNew.at(1);
@@ -70,8 +74,9 @@ void Editor::loop()
             this->docoment.swapWord(oldStr, newStr);
             }
         }
-        else if (currentLine == "3,4j")
+        else if (regex_match(currentLine, regex("[0-9]+[,]+[0-9]+[j]")))
         {
+            
             this->docoment.appendLines();
         }
         else if (currentLine.compare("Q")==0)
@@ -84,6 +89,26 @@ void Editor::loop()
         }
     }
 }
+
+bool Editor::isNumber(string str)
+{
+	if (str.empty())
+		return false;
+
+    try{
+        int num=-1;
+        num=stoi(str);
+        if(num!=-1)return true;
+        else return false;
+
+    }
+    catch(exception e){
+   return true;
+    }
+	
+	
+}
+
 vector<string> Editor::splitByChar(string str, char ch)
 {
     stringstream sstr(str);
