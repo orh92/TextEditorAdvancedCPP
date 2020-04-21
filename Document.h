@@ -6,8 +6,8 @@ using namespace std;
 class Document
 {
 private:
-    vector<string> documentData;
-    int currentLine;
+    vector<string> documentLines;
+    int currentLineIndex;
 
 public:
     Document();
